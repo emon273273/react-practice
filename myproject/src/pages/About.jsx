@@ -6,11 +6,17 @@ import CountButton from "../components/count_buttons/CountButton";
 import UpdateIncrementDecrement from "../components/updateincrementdecrement/UpdateIncrementDecrement";
 
 function About() {
-  const [count, setCount] = useState(10);
+  const [count, setCount] = useState(0);
   const [incrementvalue, setincrementvalue] = useState(0);
   const [decrementvalue, setdecrementvalue] = useState(0);
 
   const[resetvalue,setreset]=useState(0);
+
+  // const o=count||50; //  eta o ignore korbe but amader onek somoy 0 lage se khetre eta na use kore ??  dibo
+  const o=count ?? 50; //eta null ar undefined bad a sob kaj korbe o soho
+  console.log(o)
+
+  count &&console.log("count has a value",count);
 
   function reset(){
 
