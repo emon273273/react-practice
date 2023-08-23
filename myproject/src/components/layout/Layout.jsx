@@ -1,6 +1,7 @@
 import classes from "./Layout.module.css"
-
+import Tasks from "../../pages/Tasks";
 import {
+
   BrowserRouter,
   Routes,
   Route,
@@ -40,6 +41,12 @@ function Layout(props){
               <Link to={'/help'} className={path==='/help'?classes.active:classes.navItem}>
                   Help
                 </Link>
+               </li>
+               <li>
+               <Link to={'/clock'} className={path==='/clock'? classes.active:classes.navItem}>Clock</Link>
+               </li>
+              <li>
+                <Link to={'/tasks'} className={path==='/clock'?classes.active:classes.navItem}>Tasks</Link>
               </li>
             </ul>
           </div>

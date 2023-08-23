@@ -1,15 +1,23 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 import Layout from "../components/layout/Layout";
 
 function Help() {
-  // const [name,setName]=useState('')
+//   const [name,setName]=useState('')
+const [state, setState] = useState({name:''});
 
-  // setTimeout(()=>{
-  // setName("emon")
+  
+useEffect(()=>{
 
-  // },5000)
+ setTimeout(() => {
+    setState({name:"emonsab"})
+ }, 5000);
 
+ console.log(" set timeout called")
+
+},[state.name])
+
+console.log("rendering")
   const data = [
     {
       name: "md emon hossain",
@@ -24,7 +32,9 @@ function Help() {
       email: "kamrul@gmail.com",
     },
   ];
-  const [name, setName] = useState("");
+
+
+
   return (
     <Layout>
       {/* <h1>Hello i am {name?name:"Guest"}</h1> */}
@@ -34,8 +44,8 @@ function Help() {
 
       {/* using ternary */}
 
-      {name ? (
-        <h1>Hello {name}, I am help page</h1>
+      {state.name ? (
+        <h1>Hello {state.name}, I am help page</h1>
       ) : (
         <h1>Hello guest , i am help page</h1>
       )}
